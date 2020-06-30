@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+:root{
+  /* --dark-mode-bg-color:  #131313; */
+  /* --dark-mode-bg-color:  #303033; */
+  --dark-mode-bg-color:  #f5fbff;
+  --dark-mode-flex-main-bg-color:  #131313;
+  --dark-mode-heding-color: white ;
+  --dark-mode-font-color: #f5f5f7;
+  --dark-mode-link-color: #aba8a8de;
+  --dark-mode-link-hover-color: #ecececde;
+  --dark-mode-input-bg-color: #404040;
+  --dark-mode-button-color: #ecececde;
+  --red-gardient-color:linear-gradient(45deg, #9E1B38, #F05350 );
+
+/* Light mode */
+  --light-mode-bg-color:  #f6f5f7;
+  --light-mode-flex-main-bg-color:  #fff ;
+  --light-mode-heding-color:  #1d1d1f;
+  --light-mode-font-color: #86868b;
+  --light-mode-link-color: #333;
+  --light-mode-link-hover-color: #rgb(32, 32, 32);
+  --light-mode-input-bg-color: #ecececde;
+  --light-mode-button-bg-color: #ff4b2b;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body{
+  font-family: "Montserrat",sans-serif;
+  background-color:var(--dark-mode-bg-color);
+  color:var( --dark-mode-font-color);
+  
 }
