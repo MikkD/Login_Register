@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
+// import styled from 'styled-components'
 import './LoginForm2.css';
 
 function LoginForm2() {
@@ -7,47 +8,37 @@ function LoginForm2() {
     const signUpForm = useRef()
     const signInForm = useRef()
 
-    // When clicked on SignUp Button 
     const signUpSlide = () => {
         // signUpverlay - Right / Moved to the left and make it dissapear
-        signUpOverlay.current.style.transform = 'translateX(-100%)';
-        signUpOverlay.current.style.zIndex = '0';
-        signUpOverlay.current.style.opacity = '0';
+        dissapear(signUpOverlay, 'translateX(-100%)');
         // signInOverlay - Left / Made it visibble with sliding effect
-        signInOverlay.current.style.transform = 'translateX(0%)'
-        signInOverlay.current.style.opacity = '1';
-        signInOverlay.current.style.zIndex = '1';
+        showUp(signInOverlay, 'translateX(0%)');
         // signInForm - Left  /  Moved to right and make it dissapear
-        signInForm.current.style.transform = 'translateX(100%)';
-        signInForm.current.style.opacity = '0';
+        dissapear(signInForm, 'translateX(100%)');
         // signUpForm - Right  /  Made it visible with sliding effect
-        signUpForm.current.style.transform = 'translateX(0%)'
-        signUpForm.current.style.opacity = '1';
-        signUpForm.current.style.zIndex = '1';
+        showUp(signUpForm, 'translateX(0%)');
     }
 
-    // When clicked on SignIn Button 
     const signInSlide = () => {
         // signInOverlay - Left / Moved to right and make it dissapear
-        signInOverlay.current.style.transform = 'translateX(100%)';
-        signInOverlay.current.style.opacity = '0';
+        dissapear(signInOverlay, 'translateX(100%)');
         // SignUpForm - right / Moved to left and make it dissapear
-        signUpForm.current.style.transform = 'translateX(-100%)';
-        signUpForm.current.style.opacity = '0';
-        signUpForm.current.style.zIndex = '0';
+        dissapear(signUpForm, 'translateX(-100%)');
         // SignUpOverlay - left / Moved to right and make it visible
-        signUpOverlay.current.style.transform = 'translateX(0%)';
-        signUpOverlay.current.style.opacity = '1';
-        signUpOverlay.current.style.zIndex = '1';
+        showUp(signUpOverlay, 'translateX(0%)');
         // SignUpOverlay - / Made it visible with sliding effect
-        signInForm.current.style.transform = 'translateX(0%)';
-        signInForm.current.style.opacity = '1';
-        signInForm.current.style.zIndex = '1';
+        showUp(signInForm, 'translateX(0%)');
     }
-
-
-
-
+    const showUp = (element, translate) => {
+        element.current.style.transform = `${translate}`;
+        element.current.style.opacity = '1';
+        element.current.style.zIndex = '1';
+    }
+    const dissapear = (element, translate) => {
+        element.current.style.transform = `${translate}`;
+        element.current.style.opacity = '0';
+        element.current.style.zIndex = '0';
+    }
 
     return (
         <React.Fragment>

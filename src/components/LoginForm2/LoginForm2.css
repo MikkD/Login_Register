@@ -37,9 +37,6 @@ a:hover{
     cursor: pointer;
     padding: 10px 25px;
     border-radius: 5px;
-    /* border: 1px solid  var(--dark-mode-link-hover-color); */
-    /* background: transparent; */
-    /* background: #980000e6; */
     background:var(--red-gardient-color);
     margin: 10px 0px;
     transition: 0.3s ease-in-out;
@@ -54,9 +51,6 @@ a:hover{
 }
 
 .button:hover{
-    /* color: #000000; */
-    /* background-color: #fffffff5; */
-    /* background-color: #980000; */
     background:var(--red-gardient-color);
     color: var(--dark-mode-font-color);
     color:rgba(255, 255, 255, 1);
@@ -106,7 +100,6 @@ input{
     /* after absolute positioning */
     opacity: 0;
     opacity: 1;
-    /* transition: transform 0.6s ease-in-out; */
     transition: all 0.6s ease-in-out;
     z-index: 1;
    
@@ -120,7 +113,6 @@ input{
     justify-content: center;
     /* after absolute positioning */
     opacity: 0;
-    /* transition: transform 0.6s ease-in-out; */
     transition: all 0.6s ease-in-out;
     transform: translateX(-20%);
    
@@ -168,12 +160,28 @@ input{
 .sign-in-overlay{
     z-index: -1;
     transform: translateX(20%);
-}
-.sign-up-overlay{
-    transform: translateX(0%);
-    
+    /* animation-name: signIn; */
+    /* animation-duration: 1s; */
 }
 
+.animate{
+    animation-name: animate;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+/* .sign-up-overlay{
+    transform: translateX(0%);
+    animation-name: signUp;
+    animation-duration: 0.5s;
+    animation-timing-function:ease-in-out;
+} */
+
+@keyframes animate{
+    0%   {opacity:0}
+    50%   {color:green}
+    100%  {opacity:1}
+}
 
 
 @media screen and (max-width: 650px) {
